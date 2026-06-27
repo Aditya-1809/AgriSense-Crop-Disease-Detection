@@ -28,7 +28,10 @@ def get_class_directories(path):
 
         item_path = os.path.join(path, item)
 
-        if os.path.isdir(item_path):
+        if (
+            os.path.isdir(item_path)
+            and item != "PlantVillage"
+        ):
             classes.append(item)
 
     return sorted(classes)
@@ -142,6 +145,8 @@ def preprocessing_recommendations():
     print("3. Apply data augmentation")
     print("4. Remove corrupted images")
     print("5. Maintain class balance")
+    print("6. Shuffle dataset before training")
+    print("7. Split data into train, validation and test sets")
 
 
 def main():
