@@ -10,6 +10,7 @@ from flask import (
 
 from werkzeug.utils import secure_filename
 from tensorflow.keras.preprocessing import image
+from tensorflow.keras.applications.mobilenet_v2 import preprocess_input
 
 
 print("=" * 60)
@@ -21,7 +22,7 @@ print("=" * 60)
 # PROJECT CONFIGURATION
 # ==========================================================
 
-MODEL_PATH = "artifacts/crop_disease_model.h5"
+MODEL_PATH = "artifacts/crop_disease_model.keras"
 
 IMAGE_SIZE = (224, 224)
 
@@ -123,7 +124,7 @@ def preprocess_image(image_path):
 
     img_array = img_array.astype("float32")
 
-    img_array /= 255.0
+    img_array = preprocess_input(img_array)
 
     img_array = np.expand_dims(
         img_array,
