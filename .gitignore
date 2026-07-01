@@ -180,3 +180,5 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 datasets/PlantVillage/
+uploads/*
+!uploads/.gitkeep
