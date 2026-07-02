@@ -73,7 +73,7 @@ print("[SUCCESS] Upload Directory Ready")
 # ==========================================================
 # FILE VALIDATION
 # ==========================================================
-
+# Check whether the uploaded file has a valid image extension
 def allowed_file(filename):
 
     if "." not in filename:
@@ -87,7 +87,7 @@ def allowed_file(filename):
 # ==========================================================
 # MODEL LOADING
 # ==========================================================
-
+# Load the trained crop disease prediction model
 def load_prediction_model():
 
     if not os.path.exists(MODEL_PATH):
@@ -112,7 +112,7 @@ MODEL = load_prediction_model()
 # ==========================================================
 # IMAGE PREPROCESSING
 # ==========================================================
-
+# Preprocess the uploaded image before making predictions
 def preprocess_image(image_path):
 
     img = image.load_img(
@@ -137,7 +137,7 @@ def preprocess_image(image_path):
 # ==========================================================
 # DISEASE PREDICTION
 # ==========================================================
-
+# Predict the crop disease using the trained model
 def predict_disease(image_path):
 
     processed_image = preprocess_image(
