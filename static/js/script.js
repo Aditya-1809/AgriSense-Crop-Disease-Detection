@@ -45,9 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Button Hover Animation
     // ===============================
 
-    const button = document.querySelector("button");
-
-    if (button) {
+    document.querySelectorAll("button").forEach(button => {
 
         button.addEventListener("mouseenter", () => {
 
@@ -61,7 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         });
 
-    }
+    });
 
     // ===============================
     // Image Preview
@@ -108,6 +106,28 @@ document.addEventListener("DOMContentLoaded", () => {
             removeButton.style.display = "none";
 
             fileName.textContent = "No image selected";
+
+        });
+
+    }
+
+    // ===============================
+    // Loading Animation
+    // ===============================
+
+    const form = document.getElementById("predictionForm");
+    const predictButton = document.getElementById("predictButton");
+    const loadingContainer = document.getElementById("loadingContainer");
+
+    if (form && predictButton && loadingContainer) {
+
+        form.addEventListener("submit", function () {
+
+            predictButton.disabled = true;
+
+            predictButton.innerHTML = "Analyzing Image...";
+
+            loadingContainer.style.display = "block";
 
         });
 

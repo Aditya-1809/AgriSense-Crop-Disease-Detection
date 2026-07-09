@@ -23,7 +23,8 @@
 
     <p>Upload a crop leaf image to identify the disease.</p>
 
-    <form action="/predict"
+    <form id="predictionForm"
+          action="/predict"
           method="POST"
           enctype="multipart/form-data">
 
@@ -35,9 +36,7 @@
             required>
 
         <p id="fileName"
-           style="margin-top:15px;
-                  color:white;
-                  font-weight:600;">
+           style="margin-top:15px;color:white;font-weight:600;">
 
             No image selected
 
@@ -64,18 +63,36 @@
         <button
             type="button"
             id="removeImage"
-            style="display:none;
-                   margin-bottom:15px;">
+            style="display:none;margin-bottom:15px;">
 
             Remove Image
 
         </button>
 
-        <button type="submit">
+        <button
+            id="predictButton"
+            type="submit">
 
             Predict Disease
 
         </button>
+
+        <div
+            id="loadingContainer"
+            style="display:none;margin-top:25px;">
+
+            <div class="loader"></div>
+
+            <p
+                style="margin-top:15px;
+                       color:white;
+                       font-weight:bold;">
+
+                🔍 Analyzing Image...
+
+            </p>
+
+        </div>
 
     </form>
 
