@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const progressBar = document.querySelector(".progress-bar");
 
-    if(progressBar){
+    if (progressBar) {
 
-        const finalWidth = progressBar.style.width;
+        const finalWidth = progressBar.dataset.width;
 
         progressBar.style.width = "0%";
 
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             progressBar.style.width = finalWidth;
 
-        },300);
+        }, 300);
 
     }
 
@@ -26,41 +26,75 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const sections = document.querySelectorAll(".section");
 
-    sections.forEach((section,index)=>{
+    sections.forEach((section, index) => {
 
-        section.style.opacity="0";
+        section.style.opacity = "0";
 
-        section.style.transform="translateY(25px)";
+        section.style.transform = "translateY(25px)";
 
-        setTimeout(()=>{
+        setTimeout(() => {
 
-            section.style.transition="0.6s";
+            section.style.transition = "0.6s";
 
-            section.style.opacity="1";
+            section.style.opacity = "1";
 
-            section.style.transform="translateY(0px)";
+            section.style.transform = "translateY(0px)";
 
-        },index*150);
+        }, index * 150);
 
     });
 
     // ===============================
-    // Button Hover
+    // Button Hover Animation
     // ===============================
 
-    const button=document.querySelector("button");
+    const button = document.querySelector("button");
 
-    if(button){
+    if (button) {
 
-        button.addEventListener("mouseenter",()=>{
+        button.addEventListener("mouseenter", () => {
 
-            button.style.transform="scale(1.03)";
+            button.style.transform = "scale(1.03)";
 
         });
 
-        button.addEventListener("mouseleave",()=>{
+        button.addEventListener("mouseleave", () => {
 
-            button.style.transform="scale(1)";
+            button.style.transform = "scale(1)";
+
+        });
+
+    }
+
+    // ===============================
+    // Image Preview
+    // ===============================
+
+    const fileInput = document.getElementById("fileInput");
+
+    const previewImage = document.getElementById("previewImage");
+
+    if (fileInput && previewImage) {
+
+        fileInput.addEventListener("change", function () {
+
+            const file = this.files[0];
+
+            if (file) {
+
+                const reader = new FileReader();
+
+                reader.onload = function (event) {
+
+                    previewImage.src = event.target.result;
+
+                    previewImage.style.display = "block";
+
+                };
+
+                reader.readAsDataURL(file);
+
+            }
 
         });
 
