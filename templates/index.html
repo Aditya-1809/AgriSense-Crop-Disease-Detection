@@ -34,7 +34,16 @@
             accept=".jpg,.jpeg,.png"
             required>
 
-        <br><br>
+        <p id="fileName"
+           style="margin-top:15px;
+                  color:white;
+                  font-weight:600;">
+
+            No image selected
+
+        </p>
+
+        <br>
 
         <img
             id="previewImage"
@@ -51,6 +60,16 @@
             ">
 
         <br>
+
+        <button
+            type="button"
+            id="removeImage"
+            style="display:none;
+                   margin-bottom:15px;">
+
+            Remove Image
+
+        </button>
 
         <button type="submit">
 

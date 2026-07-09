@@ -29,15 +29,12 @@ document.addEventListener("DOMContentLoaded", () => {
     sections.forEach((section, index) => {
 
         section.style.opacity = "0";
-
         section.style.transform = "translateY(25px)";
 
         setTimeout(() => {
 
             section.style.transition = "0.6s";
-
             section.style.opacity = "1";
-
             section.style.transform = "translateY(0px)";
 
         }, index * 150);
@@ -71,10 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // ===============================
 
     const fileInput = document.getElementById("fileInput");
-
     const previewImage = document.getElementById("previewImage");
+    const fileName = document.getElementById("fileName");
+    const removeButton = document.getElementById("removeImage");
 
-    if (fileInput && previewImage) {
+    if (fileInput && previewImage && fileName && removeButton) {
 
         fileInput.addEventListener("change", function () {
 
@@ -82,19 +80,34 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if (file) {
 
+                fileName.textContent = "Selected File: " + file.name;
+
                 const reader = new FileReader();
 
                 reader.onload = function (event) {
 
                     previewImage.src = event.target.result;
-
                     previewImage.style.display = "block";
+                    removeButton.style.display = "inline-block";
 
                 };
 
                 reader.readAsDataURL(file);
 
             }
+
+        });
+
+        removeButton.addEventListener("click", function () {
+
+            fileInput.value = "";
+
+            previewImage.src = "";
+            previewImage.style.display = "none";
+
+            removeButton.style.display = "none";
+
+            fileName.textContent = "No image selected";
 
         });
 
