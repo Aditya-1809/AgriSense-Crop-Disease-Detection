@@ -7,4 +7,6 @@ scikit-learn
 pillow
 flask
 werkzeug
+notebook
+jypter
 
