@@ -812,3 +812,32 @@ grid-template-columns:1fr;
     background:#1f2937;
 
 }
+.confidence-high{
+    display:inline-block;
+    margin-top:15px;
+    padding:8px 16px;
+    background:#d1fae5;
+    color:#065f46;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.confidence-medium{
+    display:inline-block;
+    margin-top:15px;
+    padding:8px 16px;
+    background:#fef3c7;
+    color:#92400e;
+    border-radius:25px;
+    font-weight:bold;
+}
+
+.confidence-low{
+    display:inline-block;
+    margin-top:15px;
+    padding:8px 16px;
+    background:#fee2e2;
+    color:#991b1b;
+    border-radius:25px;
+    font-weight:bold;
+}
