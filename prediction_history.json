@@ -2,6 +2,24 @@
     {
         "crop": "Potato",
         "prediction": "Potato -  healthy",
+        "confidence": "99.18%",
+        "time": "17 July 2026 01:10 PM"
+    },
+    {
+        "crop": "Potato",
+        "prediction": "Potato -  healthy",
+        "confidence": "99.18%",
+        "time": "17 July 2026 01:04 PM"
+    },
+    {
+        "crop": "Bell Pepper",
+        "prediction": "Pepper - bell -  healthy",
+        "confidence": "46.18%",
+        "time": "17 July 2026 12:53 PM"
+    },
+    {
+        "crop": "Potato",
+        "prediction": "Potato -  healthy",
         "confidence": "97.82%",
         "time": "16 July 2026 10:34 PM"
     },
@@ -10,23 +28,5 @@
         "prediction": "Pepper - bell -  healthy",
         "confidence": "99.74%",
         "time": "16 July 2026 10:34 PM"
-    },
-    {
-        "crop": "Tomato",
-        "prediction": "Tomato Spider mites Two spotted spider mite",
-        "confidence": "95.1%",
-        "time": "16 July 2026 10:33 PM"
-    },
-    {
-        "crop": "Tomato",
-        "prediction": "Tomato Leaf Mold",
-        "confidence": "99.14%",
-        "time": "16 July 2026 10:33 PM"
-    },
-    {
-        "crop": "Tomato",
-        "prediction": "Tomato Late blight",
-        "confidence": "57.15%",
-        "time": "16 July 2026 10:32 PM"
     }
 ]
