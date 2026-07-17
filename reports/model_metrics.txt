@@ -1,0 +1,8 @@
+MODEL PERFORMANCE
+==============================
+
+Validation Accuracy : 91.79%
+Validation Loss     : 0.2398
+Precision           : 0.0871
+Recall              : 0.0882
+F1-Score            : 0.0876
